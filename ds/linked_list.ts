@@ -165,8 +165,7 @@ export class SinglyLinkedList<T> {
     }
   }
 
-  removeBack() {
-    //very badly done function
+  async removeBack(callback?: (data: any) => void) {
     if (!this.list || this.list.size <= 0) {
       throw new Error("Index out of bounds");
     }
@@ -181,6 +180,10 @@ export class SinglyLinkedList<T> {
     while (cur.next) {
       prevToTail = cur;
       cur = cur.next;
+      callback && callback(cur.data);
+      if (this.animationDelay > 0) {
+        await sleep(this.animationDelay);
+      }
     }
 
     prevToTail.next = null;

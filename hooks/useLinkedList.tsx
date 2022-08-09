@@ -87,10 +87,12 @@ export const useLinkedList = () => {
       setBlockUI(false);
     }
   };
-  const removeBack = () => {
+  const removeBack = async () => {
     setBlockUI(true);
     try {
-      singlyLinkedList.current.removeBack();
+      await singlyLinkedList.current.removeBack((data) => {
+        setHighlightNodeId(data.id);
+      });
       setList(singlyLinkedList.current.flat());
     } catch (err) {
       setBlockUI(false);
