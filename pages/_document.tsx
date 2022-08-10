@@ -19,12 +19,16 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <title>{general.app_name}</title>
-          <meta name="description" content={general.description} />
+          <meta name="description" content="Linked List Visualizer" />
+          <meta
+            name="description"
+            content="A linked list is a data structure consisting of a collection of objects stored at random memory blocks,  connected together by pointers. Each object or data element called node points to the next node in the linked list."
+          />
           <meta
             name="description"
             content="See different linked list operations visually."
           />
-          <meta name="description" content={`${general.author}`} />
+          <meta name="description" content="Jai K. Pillai" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
