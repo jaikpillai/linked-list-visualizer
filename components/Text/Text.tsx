@@ -10,7 +10,7 @@ const TexCustom: React.FunctionComponent<IText> = ({
   return <p {...props}>{props.text}</p>;
 };
 
-const headingStyles = `font-bold text-4xl dark:text-neutral-100`;
+const headingStyles = `font-bold text-lg md:text-2xl lg:text-4xl dark:text-neutral-100`;
 const subHeadingStyles = `font-bold text-xl dark:text-neutral-100`;
 const defaultStyles = `text-sm`;
 

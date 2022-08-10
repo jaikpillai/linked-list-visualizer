@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Popover, PopoverContent, PopoverTrigger } from "../Popover/index";
 import { Text } from "../Text";
 import { Input } from "../Input";
 import { Button } from "../Button";
+import { LinkedListContext } from "../../contexts/LinkedListContext";
 
 interface INode {
   data: any;
@@ -73,15 +74,16 @@ export const Node: React.FunctionComponent<INode> = (props) => {
 
 const NodePopoverContent: React.FunctionComponent<INode> = (props) => {
   const [nodeData, setNodeData] = useState(props.data.data);
+  const { list } = useContext(LinkedListContext);
 
   return (
     <div className="inline-flex flex-col gap-1">
-      <div className="flex justify-between items-center ">
-        <Text className="font-bold " text={`Node ${props.index}`} />
+      <div className="flex justify-between items-center">
+        <Text className="font-bold" text={`Node ${props.index}`} />
         <Button
           disabled={props.blockUI}
-          onClick={() => props.remove && props.remove(props.index)}
-          className="p-2"
+          onClick={() => list?.removeAt(props.index)}
+          className="p-1 m-0"
           varient="secondary"
           label=""
         >
@@ -105,7 +107,7 @@ const NodePopoverContent: React.FunctionComponent<INode> = (props) => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          props.update && props.update(props.index, nodeData);
+          list?.updateData(props.index, nodeData);
         }}
         className="flex flex-col gap-2"
       >

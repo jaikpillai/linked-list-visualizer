@@ -29,9 +29,11 @@ import { LinkedListContext } from "../../../contexts/LinkedListContext";
 
 import { Node } from "../../Primitives/Node";
 import { HeadPointer, NullPointer } from "../../Primitives";
-import { CheckIcon } from "@radix-ui/react-icons";
+import { CheckIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
 import { AnimationSpeedDropDown } from "../../Settings";
 import { DarkThemeToggle } from "../../Settings/DarkThemToggle";
+import general from "../../../general";
+import Link from "next/link";
 
 export const LinkedListView = () => {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -62,23 +64,28 @@ export const LinkedListView = () => {
   }, [list?.isEmpty()]);
 
   return (
-    // <div className="mx-auto my-auto flex flex-col">
-    //   <Text varient="heading" text="Welcome to Linked List" />
-    //   <Text varient="paragraph" text="Welcome to Linked List" />
-    //   <Button
-    //     onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-    //     label="Hello"
-    //     className="self-end"
-    //   />
-    // </div>
-    <div className="flex flex-col gap-4 py-20 mx-6 md:mx-20 lg:mx-40">
-      <Text varient="heading" text="Singly Linked List" />
+    <div className="flex flex-col items-start py-10 gap-4 mx-6 md:mx-20 lg:mx-40">
+      <div className="flex flex-col items-center  gap-3 w-full">
+        <div className="flex items-center justify-center gap-5 w-full ">
+          <Text className="" varient="heading" text={general.app_name} />
+          <Link href={general.links.project_github}>
+            <a target={"_blank"} title="Clone this project">
+              <GitHubLogoIcon className="h-10 w-10  text-neutral-500 hover:text-neutral-400" />
+            </a>
+          </Link>
+        </div>
 
+        <Text
+          className="max-w-2xl dark:text-neutral-400 text-left lg:text-center rounded-full "
+          varient="paragraph"
+          text="Visualize different Singly Linked List operations in action."
+        />
+      </div>
       <br />
 
       {/* List visualization canvas */}
-      <div>
-        <Canvas className="rounded-b-none mb-0 shadow-none">
+      <div className="w-full">
+        <Canvas className="rounded-b-none mb-0 shadow-none ">
           <div className="flex  flex-wrap w-full items-center justify-center h-full ">
             {/* Linked List */}
 
@@ -161,7 +168,7 @@ export const LinkedListView = () => {
       </div>
 
       {/* Operation Panels */}
-      <div className="flex flex-col md:flex-row gap-4 justify-between">
+      <div className="flex flex-col md:flex-row gap-4 justify-between w-full">
         {/* Operation Panel */}
         <Panel className="w-full lg:w-1/5 flex flex-col gap-4 order-1 md:-order-2">
           {/* <Text varient="subheading" text="Linked List Method" /> */}
@@ -284,8 +291,8 @@ export const LinkedListView = () => {
       </div>
 
       <SelectSeparator className="bg-neutral-7  00" />
-      <div className="flex flex-col md:flex-row gap-4 justify-between">
-        <Panel className="dark:bg-black/20 w-full md:w-4/5">
+      <div className="flex flex-col md:flex-row gap-4 justify-between w-full">
+        <Panel className="bg-white/50 dark:bg-black/20 w-full md:w-4/5">
           <Label>List Items</Label>
           <code>
             <Text
@@ -302,7 +309,7 @@ export const LinkedListView = () => {
           </code>
         </Panel>
 
-        <Panel className="dark:bg-black/20  w-full md:w-1/5">
+        <Panel className="bg-white/50 dark:bg-black/20  w-full md:w-1/5">
           <Label>Size</Label>
           <code>
             <Text text={`${list?.size()}`} />

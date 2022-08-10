@@ -22,7 +22,7 @@ const InputCustom = React.forwardRef<HTMLInputElement, IInput>(
 InputCustom.displayName = "Input";
 
 const filledStyle = `bg-primary-50 dark:bg-neutral-600 focus:outline-primary-800 dark:focus:outline dark:focus:outline-2 dark:focus:outline-primary-300`;
-const outlinedStyle = `bg-transparent outline outline-1 outline-neutral-300 
+const outlinedStyle = `bg-white outline outline-1 outline-neutral-300 
 dark:outline-0 dark:bg-neutral-600 dark:outline-neutral-500 focus:outline-primary-800 
 dark:focus:outline-2 dark:focus:outline-primary-300 focus:outline-2 
 disabled:text-neutral-400 disabled:dark:text-neutral-500 disabled:cursor-not-allowed

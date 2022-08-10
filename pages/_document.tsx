@@ -6,6 +6,8 @@ import Document, {
   DocumentInitialProps,
 } from "next/document";
 
+import general from "../general";
+
 class MyDocument extends Document {
   static async getInitialProps(ctx: any): Promise<DocumentInitialProps> {
     const initialProps = await Document.getInitialProps(ctx);
@@ -16,6 +18,13 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <title>{general.app_name}</title>
+          <meta name="description" content={general.description} />
+          <meta
+            name="description"
+            content="See different linked list operations visually."
+          />
+          <meta name="description" content={`${general.author}`} />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"

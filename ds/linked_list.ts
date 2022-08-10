@@ -178,9 +178,9 @@ export class SinglyLinkedList<T> {
     let prevToTail = this.list.head;
 
     while (cur.next) {
+      callback && callback(cur.data);
       prevToTail = cur;
       cur = cur.next;
-      callback && callback(cur.data);
       if (this.animationDelay > 0) {
         await sleep(this.animationDelay);
       }
@@ -189,6 +189,7 @@ export class SinglyLinkedList<T> {
     prevToTail.next = null;
     this.list.tail = prevToTail;
     this.list.size = this.list.size - 1;
+    callback && callback("");
   }
 
   async remove<U>(
@@ -253,7 +254,9 @@ export class SinglyLinkedList<T> {
       return this.removeFront();
     }
     if (index === this.list.size - 1) {
-      return this.removeBack();
+      return this.removeBack((data) => {
+        callback(data, index);
+      });
     }
 
     let j = 0;

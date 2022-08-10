@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 
 export const AnimationSpeed = {
   off: 0,
-  fast: 250,
+  fast: 150,
   slow: 500,
 } as const;
 

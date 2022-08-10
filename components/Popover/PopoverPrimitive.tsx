@@ -9,6 +9,7 @@ const StyledContent: React.ForwardRefExoticComponent<
 bg-neutral-50
 dark:bg-neutral-700
 border
+
 border-neutral-200
 dark:border-none
 p-4

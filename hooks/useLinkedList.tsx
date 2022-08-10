@@ -89,6 +89,7 @@ export const useLinkedList = () => {
   };
   const removeBack = async () => {
     setBlockUI(true);
+    console.log("this is called");
     try {
       await singlyLinkedList.current.removeBack((data) => {
         setHighlightNodeId(data.id);

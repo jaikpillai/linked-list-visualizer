@@ -1,4 +1,7 @@
-import { DesiredAnimationSpeed } from "../../contexts/SettingsContext";
+import {
+  AnimationSpeed,
+  DesiredAnimationSpeed,
+} from "../../contexts/SettingsContext";
 import { useSettings } from "../../hooks/useSettings";
 import {
   Select,
@@ -60,7 +63,7 @@ export const AnimationSpeedDropDown = () => {
           <SelectViewport>
             <SelectGroup>
               <SelectLabel>Animation</SelectLabel>
-              <SelectItem value="0">
+              <SelectItem value={String(AnimationSpeed.off)}>
                 <SelectItemText>Off</SelectItemText>
                 <SelectItemIndicator>
                   <CheckIcon />
@@ -69,7 +72,7 @@ export const AnimationSpeedDropDown = () => {
 
               {/* <SelectSeparator /> */}
 
-              <SelectItem value="250">
+              <SelectItem value={String(AnimationSpeed.fast)}>
                 <SelectItemText>Fast</SelectItemText>
                 <SelectItemIndicator>
                   <CheckIcon />
@@ -77,7 +80,7 @@ export const AnimationSpeedDropDown = () => {
               </SelectItem>
 
               {/* <SelectSeparator /> */}
-              <SelectItem value="500">
+              <SelectItem value={String(AnimationSpeed.slow)}>
                 <SelectItemText>Slow</SelectItemText>
                 <SelectItemIndicator>
                   <CheckIcon />

@@ -17,6 +17,7 @@ pr-2
 gap-2 
 outline
 outline-1
+bg-white
 
 dark:outline-0
 outline-neutral-300
@@ -26,7 +27,7 @@ dark:hover:bg-neutral-700
 dark:bg-neutral-600
 
 rounded-md
-hover:bg-neutral-100
+hover:bg-neutral-50
 leading-3
 
 max-h-10
