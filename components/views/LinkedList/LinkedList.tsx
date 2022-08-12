@@ -65,12 +65,16 @@ export const LinkedListView = () => {
 
   return (
     <div className="flex flex-col items-start py-10 gap-4 mx-6 md:mx-20 lg:mx-40">
-      <div className="flex flex-col items-center  gap-3 w-full">
-        <div className="flex items-center justify-center gap-5 w-full ">
-          <Text className="" varient="heading" text={general.app_name} />
+      <div className="flex flex-col items-center justify-center  gap-3 w-full">
+        <div className="flex relative items-center justify-center w-full ">
+          <Text
+            className="text-center"
+            varient="heading"
+            text={general.app_name}
+          />
           <Link href={general.links.project_github}>
             <a target={"_blank"} title="Clone this project">
-              <GitHubLogoIcon className="h-10 w-10  text-neutral-500 hover:text-neutral-400" />
+              <GitHubLogoIcon className="absolute inset-y-0 right-0 w-8 h-8 md:w-8 md:h-8 lg:h-10 lg:w-10  text-neutral-500 hover:text-neutral-400" />
             </a>
           </Link>
         </div>
