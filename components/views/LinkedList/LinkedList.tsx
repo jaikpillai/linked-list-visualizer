@@ -18,7 +18,6 @@ import {
 import { Button } from "../../";
 import { Text } from "./../../";
 import { useContext, useEffect, useRef, useState } from "react";
-import { ThemeContext } from "../../../contexts/ThemeContext";
 import { Canvas, Panel } from "../../Canvas";
 import { Input } from "../../Input/index";
 import { RadioGroup } from "../../RadioGroup";
@@ -36,7 +35,6 @@ import general from "../../../general";
 import Link from "next/link";
 
 export const LinkedListView = () => {
-  const { theme, setTheme } = useContext(ThemeContext);
   const { list, operation, setOperation, subOperation } =
     useContext(LinkedListContext);
   const [showEmpty, setShowEmpty] = useState(true);

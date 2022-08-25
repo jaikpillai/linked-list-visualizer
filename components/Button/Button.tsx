@@ -43,14 +43,15 @@ text-xs
 font-medium
 rounded-md
 focus:ring
-
+border
+border-transparent
 box-border
 disabled:select-none disabled:cursor-not-allowed
 
 
 ${(p: IButton) =>
   p.varient === "secondary"
-    ? "bg-transparent dark:text-primary-200 text-primary-900 shadow-none border-2 dark:border-primary-200 hover:bg-primary-100 dark:hover:bg-primary-200 dark:hover:text-primary-900 disabled:hover:bg-transparent disabled:hover:text-neutral-400 disabled:text-neutral-400 disabled:border-neutral-400 dark:disabled:text-neutral-500 dark:disabled:outline-neutral-500 dark:disabled:hover:bg-transparent"
+    ? "bg-transparent dark:text-primary-200 text-primary-900 shadow-none  dark:border-primary-200 hover:bg-primary-100 dark:hover:bg-primary-200 dark:hover:text-primary-900 disabled:hover:bg-transparent disabled:hover:text-neutral-400 disabled:text-neutral-400 disabled:border-neutral-400 dark:disabled:text-neutral-500 dark:disabled:outline-neutral-500 dark:disabled:hover:bg-transparent"
     : "bg-primary-800 text-primary-50 hover:bg-primary-900 disabled:bg-neutral-500"}
     `;
 

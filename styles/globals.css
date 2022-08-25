@@ -3,4 +3,5 @@
 body {
   @apply font-primary 
 }
+
 @tailwind utilities;

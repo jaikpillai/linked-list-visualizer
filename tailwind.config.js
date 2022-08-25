@@ -4,6 +4,7 @@ const colors = require('tailwindcss/colors')
 let plugin = require('tailwindcss/plugin')
 
 module.exports = {
+
   darkMode: 'class',
   content: ["./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",],
@@ -13,7 +14,8 @@ module.exports = {
       current: 'currentColor',
       black: colors.black,
       white: colors.white,
-
+      red: colors.red,
+      green: colors.green,
 
       primary: colors.blue,
       secondary: colors.black,

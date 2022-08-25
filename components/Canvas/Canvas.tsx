@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef, ForwardRefExoticComponent } from "react";
 
 interface ICanvas
   extends React.DetailedHTMLProps<
@@ -19,9 +19,11 @@ export const Canvas: React.FunctionComponent<ICanvas> = ({
         background:
           "linear-gradient( 109.6deg,  rgba(45,116,213,1) 11.2%, rgba(121,137,212,1) 91.2% )",
       }}
-      className={`relative w-full h-80 rounded-lg flex items-center justify-center  ${props.className}`}
+      className={`relative w-full min-h-80 rounded-lg flex items-center justify-center  ${props.className}`}
     >
-      <div className="realtive h-full overflow-hidden z-20">{children}</div>
+      <div className="realtive h-full overflow-hidden z-20 flex items-center justify-center">
+        {children}
+      </div>
       <div
         style={{
           backgroundSize: "32px 32px",
