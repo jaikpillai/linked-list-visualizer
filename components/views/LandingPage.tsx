@@ -1,4 +1,4 @@
-import { Canvas, Panel } from "../Canvas";
+import { Panel } from "../Canvas";
 import { AnimatePresence, motion } from "framer-motion";
 import { HeadPointer, Node, NullPointer } from "../Primitives";
 import { LinkedListContext } from "../../contexts/LinkedListContext";
@@ -32,7 +32,6 @@ const LandingPage: React.FunctionComponent = () => {
   useEffect(() => {
     // Insert inital elements to Linked List
     list?.insertBack(0);
-
     addInitalElements();
 
     return () => {
@@ -48,10 +47,9 @@ const LandingPage: React.FunctionComponent = () => {
     <div className=" min-h-screen  items-center lg:items-start lg:justify-start px-2 py-20 lg:px-40 lg:py-40 flex flex-col gap-10 header">
       <div className="flex  items-center justify-between w-full">
         <div className="relative flex flex-col gap-4  w-full h-80 header__image">
-          {/* List visualization canvas */}
-          <Panel className="flex flex-col gap-10  items-center justify-center">
+          {/* List visualization panel */}
+          <Panel className="flex flex-col gap-10  items-center justify-center bg-neutral-800">
             {/* Linked List */}
-
             <div className="flex items-ceter justify-center">
               <motion.div
                 layoutScroll
@@ -121,9 +119,7 @@ const LandingPage: React.FunctionComponent = () => {
               </motion.div>
             </div>
           </Panel>
-
           <br />
-
           {/* Heading text */}
           <div className="relative flex flex-col items-center lg:items-start justify-center  gap-2">
             <Text varient="heading" text={appInfo.app_name} />
@@ -133,7 +129,6 @@ const LandingPage: React.FunctionComponent = () => {
               text={appInfo.tagline}
             />
           </div>
-
           <div className="relative flex  items-center justify-center  lg:justify-start gap-2">
             <Button onClick={() => router.push("/app")} label="Enter App" />
             <Link href={appInfo.links.project_github}>

@@ -18,7 +18,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <title>{general.app_name}</title>
           <meta name="description" content="Linked List Visualizer" />
           <meta
             name="description"

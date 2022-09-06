@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { LinkedListView } from "../components/views/LinkedList";
 import { LinkedListProvider } from "../contexts/LinkedListContext";
 import { Footer } from "../components/Footer/Footer";
 import LandingPage from "../components/views/LandingPage";
